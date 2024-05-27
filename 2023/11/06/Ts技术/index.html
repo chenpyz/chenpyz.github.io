@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Ts技术 | CPY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Ts 基础类型：Ts 基础类型有：数值（Number）、字符串（String）、布尔（Boolean）、数组（Array）、枚举（Enum）、Any、元祖（Tuple）、Void、Unknown、Never、Null 和 Undefined。 Ts 高级类型：联合类型联合类型表示取值可以为多种类型中的一种，使用 | 分隔每个类型。 123let myFavoriteNumber: string |">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ts技术">
+<meta property="og:url" content="http://example.com/2023/11/06/Ts%E6%8A%80%E6%9C%AF/index.html">
+<meta property="og:site_name" content="CPY">
+<meta property="og:description" content="Ts 基础类型：Ts 基础类型有：数值（Number）、字符串（String）、布尔（Boolean）、数组（Array）、枚举（Enum）、Any、元祖（Tuple）、Void、Unknown、Never、Null 和 Undefined。 Ts 高级类型：联合类型联合类型表示取值可以为多种类型中的一种，使用 | 分隔每个类型。 123let myFavoriteNumber: string |">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-05-27T11:09:08.283Z">
+<meta property="article:author" content="chenpy">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="CPY" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">CPY</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">二进制写进天下事，万维网连接五大洲！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Ts技术" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/06/Ts%E6%8A%80%E6%9C%AF/" class="article-date">
+  <time class="dt-published" datetime="2023-11-05T16:00:00.000Z" itemprop="datePublished">2023-11-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Ts技术
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="Ts-基础类型："><a href="#Ts-基础类型：" class="headerlink" title="Ts 基础类型："></a>Ts 基础类型：</h4><p>Ts 基础类型有：数值（Number）、字符串（String）、布尔（Boolean）、数组（Array）、枚举（Enum）、Any、元祖（Tuple）、Void、Unknown、Never、Null 和 Undefined。</p>
+<h4 id="Ts-高级类型："><a href="#Ts-高级类型：" class="headerlink" title="Ts 高级类型："></a>Ts 高级类型：</h4><h5 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h5><p>联合类型表示取值可以为多种类型中的一种，使用 | 分隔每个类型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">myFavoriteNumber</span>: string | number;</span><br><span class="line">myFavoriteNumber = <span class="string">&quot;seven&quot;</span>; <span class="comment">// OK</span></span><br><span class="line">myFavoriteNumber = <span class="number">7</span>; <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
+
+<p>联合类型通常与 null 或 undefined 一起使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">sayHello</span> = (<span class="params">name: string | <span class="literal">undefined</span></span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>例如，这里 name 的类型是 string | undefined 意味着可以将 string 或 undefined 的值传递给 sayHello 函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">sayHello</span>(<span class="string">&quot;Semlinker&quot;</span>);</span><br><span class="line"><span class="title function_">sayHello</span>(<span class="literal">undefined</span>);</span><br></pre></td></tr></table></figure>
+
+<p>通过这个示例，你可以凭直觉知道类型 A 和类型 B 联合后的类型是同时接受 A 和 B 值的类型。</p>
+<h5 id="交叉类型"><a href="#交叉类型" class="headerlink" title="交叉类型"></a>交叉类型</h5><p>TypeScript 交叉类型是将多个类型合并为一个类型。 这让我们可以把现有的多种类型叠加到一起成为一种类型，它包含了所需的所有类型的特性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">interface <span class="title class_">IPerson</span> &#123;</span><br><span class="line">  <span class="attr">id</span>: string;</span><br><span class="line">  <span class="attr">age</span>: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface <span class="title class_">IWorker</span> &#123;</span><br><span class="line">  <span class="attr">companyId</span>: string;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type <span class="title class_">IStaff</span> = <span class="title class_">IPerson</span> &amp; <span class="title class_">IWorker</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">staff</span>: <span class="title class_">IStaff</span> = &#123;</span><br><span class="line">  <span class="attr">id</span>: <span class="string">&quot;E1006&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">33</span>,</span><br><span class="line">  <span class="attr">companyId</span>: <span class="string">&quot;EFT&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(staff);</span><br></pre></td></tr></table></figure>
+
+<h5 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h5><p>类型别名会给一个类型起个新名字。 类型别名有时和接口很像，但是可以作用于原始值，联合类型，元组以及其它任何你需要手写的类型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">type <span class="title class_">Message</span> = string | string[];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="title function_">greet</span> = (<span class="params">message: Message</span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/11/06/Ts%E6%8A%80%E6%9C%AF/" data-id="clwovp9et0001psxlalqx6ykx" data-title="Ts技术" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/05/27/04%E5%B8%86%E5%B8%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          帆帆~
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/06/16/01%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%9C%AC%E8%B4%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">对象的本质</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/05/27/04%E5%B8%86%E5%B8%86/">帆帆~</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/06/Ts%E6%8A%80%E6%9C%AF/">Ts技术</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/16/01%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%9C%AC%E8%B4%A8/">对象的本质</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/20/02%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%93%E5%AD%98/">浏览器的缓存</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 chenpy<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

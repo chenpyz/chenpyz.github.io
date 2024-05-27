@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>对象的本质 | CPY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="为什么数字字符串布尔值不是对象，却可以调用一些方法，使用一些属性呢？ 12let num &#x3D; 1;num.toString();  因为我们 JS 中提供很多对象。就像数组，我们可以直接通过[]声明数组，也可以通过 new Array()我们的字符串数字布尔值等，他们再调用方法时，js 会帮助我们。通过 new Number new String new Boolean 来把对应的原始值，转换为对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对象的本质">
+<meta property="og:url" content="http://example.com/2023/06/16/01%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%9C%AC%E8%B4%A8/index.html">
+<meta property="og:site_name" content="CPY">
+<meta property="og:description" content="为什么数字字符串布尔值不是对象，却可以调用一些方法，使用一些属性呢？ 12let num &#x3D; 1;num.toString();  因为我们 JS 中提供很多对象。就像数组，我们可以直接通过[]声明数组，也可以通过 new Array()我们的字符串数字布尔值等，他们再调用方法时，js 会帮助我们。通过 new Number new String new Boolean 来把对应的原始值，转换为对">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-05-27T11:09:05.238Z">
+<meta property="article:author" content="chenpy">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="CPY" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">CPY</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">二进制写进天下事，万维网连接五大洲！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-01对象的本质" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/16/01%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%9C%AC%E8%B4%A8/" class="article-date">
+  <time class="dt-published" datetime="2023-06-15T16:00:00.000Z" itemprop="datePublished">2023-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      对象的本质
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>为什么数字字符串布尔值不是对象，却可以调用一些方法，使用一些属性呢？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">1</span>;</span><br><span class="line">num.<span class="title function_">toString</span>();</span><br></pre></td></tr></table></figure>
+
+<p>因为我们 JS 中提供很多对象。就像数组，我们可以直接通过[]声明数组，也可以通过 new Array()<br>我们的字符串数字布尔值等，他们再调用方法时，js 会帮助我们。通过 new Number new String new Boolean 来把对应的原始值，转换为对象，然后再调用相关的属性或方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">1</span>;</span><br><span class="line">num.<span class="title function_">toString</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 本质上</span></span><br><span class="line"><span class="keyword">let</span> num = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Number</span>(num).<span class="title function_">toString</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="valueOf-NaN"><a href="#valueOf-NaN" class="headerlink" title="valueOf"></a>valueOf</h3><p>这个是获取到某写对象的原始值。这个方法我们不会主动使用，这是给 JS 内部自己使用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="keyword">new</span> <span class="title class_">Number</span>(<span class="number">1</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num.<span class="title function_">valueOf</span>()); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p>new String new Number new Boolean 他们生成的对象的 valueOf 都是对应的原始值。<br>数组，对象的 valueOf 得到的还是自身。<br>在我们进行相关的比较时，会将对应的内容转换为原始值进行比较</p>
+<p>— 先通过 valueOf 转为原始值，如果成功则比较<br>— 如果不成功，则再通过 toString 转成字符串进行比较</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[] == <span class="string">&quot;&quot;</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>数组转字符串，会变成 去掉中括号后的字符串 [1,2,3]&#x3D;&gt;”1,2,3”<br>对象转字符串，会变成[object Object]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/16/01%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%9C%AC%E8%B4%A8/" data-id="clwovp9eu0002psxl0hjje3o9" data-title="对象的本质" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/11/06/Ts%E6%8A%80%E6%9C%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Ts技术
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/05/20/02%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%93%E5%AD%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">浏览器的缓存</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/05/27/04%E5%B8%86%E5%B8%86/">帆帆~</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/06/Ts%E6%8A%80%E6%9C%AF/">Ts技术</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/16/01%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%9C%AC%E8%B4%A8/">对象的本质</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/20/02%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%93%E5%AD%98/">浏览器的缓存</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 chenpy<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
