@@ -16,15 +16,15 @@
   <meta name="author" content="chenpy">
   <meta name="keywords" content="cpy">
   
-    <meta name="description" content="Document       .hover {         animation: identifier 1.5s linear 0s infinite normal;         position: relative;         cursor: pointer;     }      .hover::after {         position">
+    <meta name="description" content="Document           .nowDate {       text-align: center;     }     .loveDay {       display: flex;       justify-content: center;       &#x2F;* border: 1px solid #000; *&#x2F;       margin: 15">
 <meta property="og:type" content="website">
 <meta property="og:title" content="page.title">
 <meta property="og:url" content="http://example.com/about/del.html">
 <meta property="og:site_name" content="CPY">
-<meta property="og:description" content="Document       .hover {         animation: identifier 1.5s linear 0s infinite normal;         position: relative;         cursor: pointer;     }      .hover::after {         position">
+<meta property="og:description" content="Document           .nowDate {       text-align: center;     }     .loveDay {       display: flex;       justify-content: center;       &#x2F;* border: 1px solid #000; *&#x2F;       margin: 15">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-05-29T07:44:08.239Z">
-<meta property="article:modified_time" content="2024-05-29T07:44:08.239Z">
+<meta property="article:published_time" content="2024-05-29T08:29:13.495Z">
+<meta property="article:modified_time" content="2024-05-29T08:29:13.495Z">
 <meta property="article:author" content="chenpy">
 <meta property="article:tag" content="cpy">
 <meta name="twitter:card" content="summary_large_image">
@@ -221,291 +221,150 @@
 <article class="page-content">
   <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
-    .hover {
-        animation: identifier 1.5s linear 0s infinite normal;
-        position: relative;
-        cursor: pointer;
+  </head>
+  <style>
+    .nowDate {
+      text-align: center;
     }
-
-    .hover::after {
-        position: absolute;
-        display: block;
-        content: "×";
-        right: 0;
-        top: 0;
-        width: 16px;
-        height: 16px;
-        border-radius: 5px;
-        background-color: red;
-        text-align: center;
-        line-height: 16px;
-        color: white;
+    .loveDay {
+      display: flex;
+      justify-content: center;
+      /* border: 1px solid #000; */
+      margin: 15px 0;
+      font-size: 20px;
     }
-
-    @keyframes identifier {
-        0% {
-            position: relative;
-            top: 0px;
-            left: 0;
-        }
-
-        33% {
-            position: relative;
-            top: -10px;
-            left: 0;
-        }
-
-        enubutton 66% {
-            position: relative;
-            top: 10px;
-            left: 0;
-        }
-
-        100% {
-            position: relative;
-            top: 0px;
-            left: 0;
-        }
+    .redxin {
+      color: red;
     }
-
-    /* 在小屏幕设备上应用的样式 */
-    @media only screen and (max-width: 600px) {
-
-        /* 这里添加你针对小屏幕设备的样式 */
-        button {
-            margin-bottom: 10px;
-        }
-
-        #menu {}
-
-        #menu>span {
-            padding: 8px 6px;
-            margin-right: 5px;
-            margin-bottom: 5px;
-        }
+    .txt {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* border: 1px solid #000; */
+      margin: 15px 0;
+      font-size: 20px;
     }
-
-    #menu {
-        width: 95%;
-        min-height: 30px;
-        padding: 8px;
-        border: 3px solid rgb(228, 13, 13);
-
+    .bluexin {
+      color: blue;
+      font-size: 50px;
     }
-
-    #menu>span {
-        display: inline-block;
-        padding: 8px 6px;
-        border-radius: 8px;
-        background-color: #ffad60;
-        margin-right: 10px;
-        margin-bottom: 10px;
-    }
-
-    h2>span {
-        color: #d9534f;
-    }
-
-    h1,
-    h2 {
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
-
-    button {
+    .titleShow2, .returnShow2 {
         width: 90px;
         height: 45px;
         border: none;
         border-radius: 10px;
         /* margin-bottom: 20px; */
-        background-color: #4e6ef2;
+        background-color: #e22dc4;
         color: white;
     }
-
-    .del {
-        background-color: #c73b0b;
-    }
-
-    button:hover {
-        cursor: pointer;
-        background-color: #80afec;
-    }
-
-    .btn {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .selectBtn {
-        display: flex;
-        justify-content: space-evenly;
-        width: 100%;
-    }
-
-    h1>.xin {
-        color: blue;
-    }
-    .titleShow{
-        /* background-color: red; */
-        width: 160px;
-    }
-    .returnShow{
-        background-color: #48a3ee;
-    }
-</style>
-
-<body>
-    <button class="titleShow">今天不知道吃什么了</button>
-    <div class="show">
-        <h1><span class="xin">♥</span><span class="account">帆帆</span>点菜小功能<span class="xin">♥</span></h1>
-        <h2>今天就吃这个了：<span></span></h1>
-            <div class="btn">
-                <div class="selectBtn">
-                    <button class="select">随机选菜</button>
-                    <button class="add" style="margin-left: 20px">新增菜单</button>
-                    <button class="del" style="margin-left: 20px">删除菜单</button>
-                </div>
-                <div id="menu"></div>
-            </div>
-            <hr>
-    <button class="returnShow">退出选菜</button>
+  </style>
+  <body>
+    <button class="titleShow2">日期记录</button>
+    <div class="show2">
+      <div class="nowDate"><span class="nowDate"></span></div>
+      <div class="loveDay">
+        <span class="redxin">♥</span><span>恋爱已经</span
+        ><span class="loveDayShow"></span><span>天</span>
+      </div>
+      <div class="txt">
+        <span class="bluexin">♥♥♥</span><span>帆帆</span
+        ><span class="bluexin">♥♥♥</span>
+      </div>
+      <button class="returnShow2">退出</button>
     </div>
     <script>
-        let box = document.getElementById("menu");
-        let select = document.querySelector("h2 span");
-        let btn = document.querySelector(".select");
-        let add = document.querySelector(".add");
-        let del = document.querySelector(".del");
-        let show = document.querySelector(".show");
-        let account = document.querySelector(".account");
-        let titleShow = document.querySelector(".titleShow");
-        let returnShow = document.querySelector(".returnShow");
-        let list = JSON.parse(localStorage.getItem("List")) || [];
+      let nowDate = document.querySelector(".nowDate");
+      let loveDayShow = document.querySelector(".loveDayShow");
+      let titleShow2 = document.querySelector(".titleShow2");
+      let show2 = document.querySelector(".show2");
+      let returnShow2 = document.querySelector(".returnShow2");
 
-        window.onload = function () {
-            show.style.display = "none";
-            titleShow.addEventListener("click",function(){
-                let val = prompt("请输入特定的密码去选菜😁(*^_^*)：") || "";
-                if(val == "帆帆520" || val == "烦人精"){
-                    show.style.display = "block";
-                    titleShow.style.display = "none";
-                }else if(val == "游客"){
-                    show.style.display = "block";
-                    titleShow.style.display = "none";
-                    account.style.display = "none";
+      window.onload = function () {
+        show2.style.display = "none";
+            titleShow2.addEventListener("click",function(){
+                let val = prompt("请输入特定的密码：") || "";
+                if(val == "520" || val == "大宝" || val == "宝子"){
+                    show2.style.display = "block";
+                    titleShow2.style.display = "none";
                 }else{
-                    alert("验证错误了😭😭😭，不能去选菜哦！再去试试吧，宝子！");
+                    alert("密码都能忘的嘛🙁🙁🙁");
                 }
             })
-            returnShow.addEventListener("click", function(){
-                show.style.display = "none";
-                titleShow.style.display = "block";
-                account.style.display = "inline";
+            returnShow2.addEventListener("click", function(){
+                show2.style.display = "none";
+                titleShow2.style.display = "block";
             })
-            //首次进入页面时，获取本地存的值进行渲染
-            for (let i = 0; i < list.length; i++) {
-                let span = document.createElement("span");
-                span.innerText = list[i];
-                box.appendChild(span);
-            }
+      }
+      function getCurrentDateTime() {
+        // 获取当前时间
+        var now = new Date();
+        // 获取年、月、日、小时、分钟、秒
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1; // 月份是从0开始的，所以要加1
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
 
-            //新增
-            add.addEventListener("click", function () {
-                let menu = document.querySelectorAll("#menu span");
-                if (menu.length > 0) {
-                    menu.forEach((item) => {
-                        item.classList.remove("hover");
-                    });
-                }
-                let val = prompt("请输入菜名：") || "";
-                if (val.trim() != "") {
-                    list.push(val);
-                    let span = document.createElement("span");
-                    span.innerHTML = val;
-                    box.appendChild(span);
-                }
-            });
+        // 获取星期几
+        var dayOfWeek = now.getDay();
+        var dayOfWeekText = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        var weekDay = dayOfWeekText[dayOfWeek];
 
-            //随机抽取
-            btn.addEventListener("click", function () {
-                let menu = document.querySelectorAll("#menu span");
-                if (list.length < 2) {
-                    alert("菜单数量大于1个才能随机选择哦!");
-                    return;
-                }
-                select.innerText = "";
-                let index;
-                let time = setInterval(function () {
-                    menu.forEach((item) => {
-                        item.style.color = "black";
-                        item.style.backgroundColor = "#ffad60";
-                        item.style.border = "none";
-                        item.classList.remove("hover");
-                    });
-                    index = parseInt(Math.random() * list.length);
-                    menu[index].style.color = "red";
-                    menu[index].style.backgroundColor = "#ffeead";
-                    menu[index].style.border = "1px solid #FFF000";
-                }, 100);
-                setTimeout(() => {
-                    select.innerText = menu[index].innerText;
-                    clearInterval(time);
-                }, 1500);
-            });
+        // 格式化输出
+        var formattedDateTime =
+          year +
+          "年" +
+          month +
+          "月" +
+          day +
+          "日 " +
+          hour +
+          ":" +
+          minute +
+          ":" +
+          second +
+          " " +
+          weekDay;
 
-            //删除时元素浮动的动态效果
-            del.addEventListener("click", function () {
-                let menu = document.querySelectorAll("#menu span");
-                if (menu.length > 0) {
-                    menu.forEach((item) => {
-                        item.classList.add("hover");
-                    });
-                } else {
-                    alert("菜单里一个菜都没有哦!");
-                }
-            });
+        return formattedDateTime;
+      }
+      setInterval(() => {
+        var currentDateTime = getCurrentDateTime();
+        nowDate.innerHTML = currentDateTime;
+      }, 1000);
+      function daysSince(targetDate) {
+        // 将目标日期和当前日期转换为毫秒数
+        var targetTime = targetDate.getTime();
+        var currentTime = new Date().getTime();
 
-            //删除菜
-            box.addEventListener("click", function (e) {
-                if (e.target.className == "hover") {
-                    let delList = e.target.innerText;
-                    box.removeChild(e.target);
-                    list.forEach((item, index) => {
-                        if (item == delList) {
-                            list.splice(index, 1);
-                        }
-                    });
-                }
-            });
+        // 计算时间差（毫秒）
+        var timeDiff = currentTime - targetTime;
 
-            //删除时如果点击其他地方，取消元素的浮动效果
-            document.addEventListener("click", function (e) {
-                let isBox = box.contains(e.target);
-                if (!isBox && e.target.className !== "del") {
-                    let menu = document.querySelectorAll("#menu span");
-                    menu.forEach((item) => {
-                        item.classList.remove("hover");
-                    });
-                }
-            });
-        };
+        // 将时间差转换为天数
+        var daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
 
-        //离开页面时进行缓存
-        window.onbeforeunload = function () {
-            localStorage.setItem("List", JSON.stringify(list));
-        };
+        return daysDiff;
+      }
+      var targetDate = new Date("2024-02-25");
+      var daysPassed = daysSince(targetDate);
+      loveDayShow.innerHTML = daysPassed;
     </script>
-</body>
-
+  </body>
 </html>
+
 
   
 
